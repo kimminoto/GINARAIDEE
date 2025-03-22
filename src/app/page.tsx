@@ -4,33 +4,34 @@ import { Card } from './components/ui/Card';
 
 export default function Home() {
 
-  
   return (
-    <div 
+    <div
       className="min-h-screen flex flex-col"
       style={{
         backgroundImage: `url("https://i.pinimg.com/1200x/13/75/0d/13750d8970141cab1ab2a703d950fb75.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        
+
       }}
-      
+
     >
-      {/* ส่วนที่ 1: Header **/}
-      <header className="pt-8 pb-4 px-4">
-        <div className="container mx-auto max-w-md text-center">
-          <div className="inline-block p-3 bg-white rounded-full shadow-lg mb-4">
-            <span className='text-4xl'>🍽</span>
-          </div>
-          <h1 className="text-4xl font-bold text-center mb-2 text-orange-800">GINARAIDEE</h1>
-          <p className="text-orange-600 font-medium">ไม่รู้จะกินอะไร? มาสุ่มกันเถอะ!</p>
-        </div>
-      </header>
+      {/* ส่วนที่ 1: Header */}
+      
+
 
       {/* ส่วนที่ 2: Content */}
       <main className="flex-grow py-6 px-4 flex items-center justify-center">
         <div className="w-full max-w-md">
           <Card className="w-full p-8 border-0 shadow-xl bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl">
+
+            <div className="text-center mb-6">
+              <div className="inline-block p-2 bg-white rounded-full shadow-lg mb-4">
+                <span className='text-6xl'>🍽</span>
+              </div>
+              <h1 className="text-5xl font-bold text-orange-800 mb-2">GINARAIDEE</h1>
+              <p className="text-xl text-orange-600 font-medium">ไม่รู้จะกินอะไร? มาสุ่มกันเถอะ!</p>
+            </div>
+
             <div className="space-y-6">
               <div className="text-center">
                 <Link href="/create" className="w-full block">
@@ -85,21 +86,7 @@ export default function Home() {
 
           {/* Food illustrations */}
           <div className="relative h-14 w-full mt-4">
-            <div className="absolute -left-2 -top-20 transform -rotate-12">
-              <div className="bg-amber-400 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
-                <span className="text-3xl">🍜</span>
-              </div>
-            </div>
-            <div className="absolute right-5 -top-8 transform rotate-12">
-              <div className="bg-red-400 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🍕</span>
-              </div>
-            </div>
-            <div className="absolute left-20 -bottom-4 transform -rotate-6">
-              <div className="bg-green-400 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
-                <span className="text-xl">🥗</span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </main>
@@ -108,7 +95,7 @@ export default function Home() {
       <footer className="py-6 px-4">
         <div className="container mx-auto max-w-md">
           <p className="text-center text-sm text-orange-700">
-            สร้างห้องและชวนเพื่อนมาสุ่มอาหารด้วยกัน เพื่อความสนุกในการเลือกเมนูอาหาร!!! 
+            สร้างห้องและชวนเพื่อนมาสุ่มอาหารด้วยกัน เพื่อความสนุกในการเลือกเมนูอาหาร!!!
           </p>
         </div>
       </footer>
