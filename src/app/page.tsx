@@ -108,7 +108,7 @@ export default function Home() {
       <footer className="py-6 px-4">
         <div className="container mx-auto max-w-md">
           <p className="text-center text-sm text-orange-700">
-            สร้างห้องและชวนเพื่อนมาสุ่มอาหารด้วยกัน เพื่อความสนุกในการเลือกเมนูอาหาร!!
+            สร้างห้องและชวนเพื่อนมาสุ่มอาหารด้วยกัน เพื่อความสนุกในการเลือกเมนูอาหาร!!! 
           </p>
         </div>
       </footer>
