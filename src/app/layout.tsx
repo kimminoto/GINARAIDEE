@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="th">
-      <body className="min-h-screen flex flex-col">
+      <body className="overflow-hidden h-screen"> 
+        {/* ทำให้หน้าจอไม่ขยับและทำให้รูปเท่ากับขนาดหน้าจอ */}
         
         <Navbar />
         <main className="flex-grow">
