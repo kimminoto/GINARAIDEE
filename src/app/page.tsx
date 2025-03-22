@@ -15,10 +15,6 @@ export default function Home() {
       }}
 
     >
-      {/* ส่วนที่ 1: Header */}
-      
-
-
       {/* ส่วนที่ 2: Content */}
       <main className="flex-grow py-6 px-4 flex items-center justify-center">
         <div className="w-full max-w-md">
