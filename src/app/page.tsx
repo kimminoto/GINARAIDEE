@@ -13,7 +13,6 @@ export default function Home() {
         backgroundPosition: 'center',
 
       }}
-
     >
       {/* ส่วนที่ 2: Content */}
       <main className="flex-grow py-6 px-4 flex items-center justify-center">
