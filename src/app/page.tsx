@@ -16,7 +16,7 @@ export default function Home() {
       }}
       
     >
-      {/* ส่วนที่ 1: Header */}
+      {/* ส่วนที่ 1: Header **/}
       <header className="pt-8 pb-4 px-4">
         <div className="container mx-auto max-w-md text-center">
           <div className="inline-block p-3 bg-white rounded-full shadow-lg mb-4">
