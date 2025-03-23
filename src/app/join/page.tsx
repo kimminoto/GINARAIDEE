@@ -165,7 +165,7 @@ export default function JoinRoom() {
             <button
               type="button"
               onClick={() => router.push('/')}
-              className="flex items-center text-orange-600 hover:text-orange-800 transition-colors focus:outline-none"
+              className="flex items-center text-orange-600 hover:text-orange-800 transition-colors focus:outline-none cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -175,7 +175,7 @@ export default function JoinRoom() {
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 shadow-md transform transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 shadow-md transform transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {isLoading ? (
                 <span className="flex items-center">
@@ -222,8 +222,7 @@ export default function JoinRoom() {
           {/* 2. Main Container */}
           <Container />
           
-          {/* 3. Footer */}
-          <Footer />
+          
         </div>
       </div>
     </div>

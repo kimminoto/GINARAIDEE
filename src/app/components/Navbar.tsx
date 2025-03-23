@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Navbar = () => {
   return (
@@ -30,11 +29,12 @@ const Navbar = () => {
           {/* เมนูหลัก */}
           <nav className="hidden md:flex">
             <div className="flex items-center divide-x divide-gray-300">
-              <Link href="/join" className="p-4 text-gray-700 hover:text-orange-500 transition px-4">
-                เข้าร่วมห้อง
-              </Link>
+              
               <Link href="/create" className="p-4 text-gray-700 hover:text-orange-500 transition px-4">
                 สร้างห้อง
+              </Link>
+              <Link href="/join" className="p-4 text-gray-700 hover:text-orange-500 transition px-4">
+                เข้าร่วมห้อง
               </Link>
               <Link href="/about" className="p-4 text-gray-700 hover:text-orange-500 transition px-4">
                 เกี่ยวกับเรา

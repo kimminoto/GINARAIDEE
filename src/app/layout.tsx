@@ -20,11 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {children}
           
         </main>
-        <footer className="bg-white-100 py-4 text-center text-gray-600 text-sm">
-          <div className="container mx-auto px-4">
-            &copy; {new Date().getFullYear()} GINARAIDEE
-          </div>
-        </footer>
+       
       </body>
     </html>
   );
