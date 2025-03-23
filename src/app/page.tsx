@@ -11,9 +11,9 @@ export default function Home() {
         backgroundImage: `url("https://i.pinimg.com/1200x/13/75/0d/13750d8970141cab1ab2a703d950fb75.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-
       }}
     >
+    
       {/* ส่วนที่ 2: Content */}
       <main className="flex-grow py-6 px-4 flex items-center justify-center">
         <div className="w-full max-w-md">
@@ -23,7 +23,7 @@ export default function Home() {
               <div className="inline-block p-2 bg-white rounded-full shadow-lg mb-4">
                 <span className='text-6xl'>🍽</span>
               </div>
-              <h1 className="text-5xl font-bold text-orange-800 mb-2">GINARAIDEE</h1>
+              <h1 className="text-4xl font-bold text-orange-800 mb-2">GINARAIDEE</h1>
               <p className="text-xl text-orange-600 font-medium">ไม่รู้จะกินอะไร? มาสุ่มกันเถอะ!</p>
             </div>
 
@@ -86,16 +86,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* ส่วนที่ 3: Footer */}
-      <footer className="py-6 px-4">
-        <div className="container mx-auto max-w-md">
-          <p className="text-center text-sm text-orange-700">
-            สร้างห้องและชวนเพื่อนมาสุ่มอาหารด้วยกัน เพื่อความสนุกในการเลือกเมนูอาหาร!!!
-          </p>
-        </div>
-      </footer>
+      
     </div>
   );
 }
-
-// Commit1

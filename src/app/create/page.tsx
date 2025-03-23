@@ -1,12 +1,8 @@
 'use client';
-// pages/join.tsx
+// pages/create.tsx
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
-
-interface FormData {
-  // ...ส่วนที่เหลือของโค้ด
-}
 
 interface RoomSettings {
   maxMembers: number;
@@ -64,7 +60,7 @@ export default function CreateRoom() {
       <Head>
         <title>สร้างห้องใหม่ | Food Randomizer</title>
       </Head>
-
+      
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg p-6 border border-amber-200 transform transition-all duration-300 hover:shadow-xl">
           <div className="text-center mb-8">
@@ -144,13 +140,17 @@ export default function CreateRoom() {
                   onChange={handleChange}
                 />
               </div>
+              <div className="flex justify-between text-xs text-amber-600 mt-1 px-1">
+                <span>2</span>
+                <span>5</span>
+              </div>
             </div>
 
             <div className="flex items-center justify-between pt-4 border-t border-amber-100">
               <button
                 type="button"
                 onClick={() => router.push('/')}
-                className="inline-flex items-center text-amber-600 hover:text-amber-800 font-medium transition duration-200"
+                className="inline-flex items-center text-amber-600 hover:text-amber-800 font-medium transition duration-200 focus:outline-none cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -160,7 +160,7 @@ export default function CreateRoom() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 shadow-md transition duration-200 disabled:opacity-50 transform hover:scale-105 active:scale-95"
+                className="bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 shadow-md transition duration-200 disabled:opacity-50 transform hover:scale-105 active:scale-95 cursor-pointer"
               >
                 {isLoading ? (
                   <span className="flex items-center">
