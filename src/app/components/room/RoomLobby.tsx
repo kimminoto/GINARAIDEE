@@ -37,7 +37,7 @@ const RoomLobby: React.FC<RoomLobbyProps> = ({
         if (spinning) {
             const interval = setInterval(() => {
                 setDisplayedOptions(generateRandomSequence());
-            }, 100 );
+            }, 120 );
 
             setTimeout(() => {
                 clearInterval(interval);
