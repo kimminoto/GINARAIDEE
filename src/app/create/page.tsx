@@ -31,32 +31,22 @@ export default function CreateRoom() {
     });
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch('/api/rooms/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(roomSettings),
-      });
-      
-      const data = await response.json();
-      
-      if (response.ok) {
-        router.push(`/room/${data.roomCode}`);
-      } else {
-        alert('เกิดข้อผิดพลาด: ' + data.message);
-      }
-    } catch (error) {
-      console.error('Error creating room:', error);
-      alert('ไม่สามารถสร้างห้องได้ กรุณาลองใหม่อีกครั้ง');
-    } finally {
-      setIsLoading(false);
+
+    // ตรวจสอบว่ากรอกชื่อเล่นหรือไม่
+    if (!roomSettings.nickname.trim()) {
+      alert('กรุณาใส่ชื่อที่ใช้ในห้อง');
+      return;
     }
+
+    // สร้างรหัสห้องแบบสุ่ม
+    const roomCode = Math.random().toString(36).substr(2, 8);
+
+    // พาไปที่ RoomLobby พร้อมข้อมูล
+    router.push(
+        `/room/${roomCode}?nickname=${encodeURIComponent(roomSettings.nickname)}&maxMembers=${roomSettings.maxMembers}&foodOptions=${roomSettings.foodOptions}`
+    );
   };
 
   return (
@@ -74,7 +64,7 @@ export default function CreateRoom() {
       <Head>
         <title>สร้างห้องใหม่ | Food Randomizer</title>
       </Head>
-      
+
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg p-6 border border-amber-200 transform transition-all duration-300 hover:shadow-xl">
           <div className="text-center mb-8">
@@ -86,7 +76,7 @@ export default function CreateRoom() {
             <h1 className="text-3xl font-bold text-amber-600">สร้างห้องใหม่</h1>
             <p className="text-amber-500 mt-2">ตั้งค่าห้องของคุณเพื่อเริ่มสุ่มอาหาร</p>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="mb-5">
               <label className="block text-amber-700 text-sm font-medium mb-2" htmlFor="nickname">
@@ -110,7 +100,7 @@ export default function CreateRoom() {
                 />
               </div>
             </div>
-            
+
             <div className="mb-5">
               <label className="block text-amber-700 text-sm font-medium mb-2" htmlFor="maxMembers">
                 จำนวนผู้เข้าร่วมสูงสุด
@@ -131,12 +121,9 @@ export default function CreateRoom() {
                   onChange={handleChange}
                 />
               </div>
-              <div className="flex justify-between text-xs text-amber-600 mt-1 px-1">
-                <span>1</span>
-                <span>10</span>
-              </div>
+
             </div>
-            
+
             <div className="mb-6">
               <label className="block text-amber-700 text-sm font-medium mb-2" htmlFor="foodOptions">
                 จำนวนตัวเลือกอาหารที่จะสุ่ม
@@ -157,12 +144,8 @@ export default function CreateRoom() {
                   onChange={handleChange}
                 />
               </div>
-              <div className="flex justify-between text-xs text-amber-600 mt-1 px-1">
-                <span>2</span>
-                <span>5</span>
-              </div>
             </div>
-            
+
             <div className="flex items-center justify-between pt-4 border-t border-amber-100">
               <button
                 type="button"

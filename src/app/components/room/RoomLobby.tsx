@@ -1,7 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
-import { Input } from '../ui/Input';
 
 interface Participant {
   userId: string;
@@ -18,15 +19,15 @@ interface RoomLobbyProps {
   showStartButton?: boolean;
 }
 
-const RoomLobby: React.FC<RoomLobbyProps> = ({ 
-  participants, 
-  roomId, 
-  isHost, 
-  onNext, 
-  showStartButton = false 
+const RoomLobby: React.FC<RoomLobbyProps> = ({
+  participants,
+  roomId,
+  isHost,
+  onNext,
+  showStartButton = false
 }) => {
   const [copySuccess, setCopySuccess] = useState<string>('');
-  
+
   // ฟังก์ชันสำหรับคัดลอกรหัสห้อง
   const handleCopyRoomCode = (): void => {
     navigator.clipboard.writeText(roomId)
@@ -69,8 +70,8 @@ const RoomLobby: React.FC<RoomLobbyProps> = ({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {participants.map((participant) => (
-          <div 
-            key={participant.userId} 
+          <div
+            key={participant.userId}
             className={`p-3 rounded-lg border flex items-center ${
               participant.ready ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'
             }`}
@@ -89,7 +90,7 @@ const RoomLobby: React.FC<RoomLobbyProps> = ({
             </div>
           </div>
         ))}
-        
+
         {/* แสดงช่องว่างสำหรับผู้เข้าร่วมที่ยังไม่มี */}
         {Array(Math.max(0, 6 - participants.length)).fill(0).map((_, i) => (
           <div key={`empty-${i}`} className="p-3 rounded-lg border border-dashed border-gray-300 bg-gray-50 flex items-center justify-center h-20">
