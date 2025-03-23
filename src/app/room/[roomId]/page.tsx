@@ -15,5 +15,6 @@ export default function RoomPage({ params }: { params: { roomId: string } }) {
 
     return (
         <RoomLobby participants={participants} roomId={roomId} isHost={true} onNext={() => {}} />
+
     );
 }
